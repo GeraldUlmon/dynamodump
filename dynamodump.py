@@ -581,8 +581,7 @@ def do_backup(dynamo, read_capacity, tableQueue=None, srcTable=None):
                                       table_name + ".  BACKUP FOR IT IS USELESS.")
                         tableQueue.task_done()
 
-                    fName = args.dumpPath + os.sep + table_name + os.sep + DATA_DIR + os.sep +
-                        str(i).zfill(4) + ".json"
+                    fName = args.dumpPath + os.sep + table_name + os.sep + DATA_DIR + os.sep + str(i).zfill(4) + ".json"
                     f = open(fName, "w+")
                     f.write(json.dumps(scanned_table, indent=JSON_INDENT))
                     f.close()
