@@ -589,6 +589,8 @@ def do_backup(dynamo, read_capacity, tableQueue=None, srcTable=None):
                     tar = tarfile.open(fName + ".tar.gz", "w:gz")
                     tar.add(fName)
                     tar.close()
+                    
+                    os.remove(fName)
 
                     i += 1
 
